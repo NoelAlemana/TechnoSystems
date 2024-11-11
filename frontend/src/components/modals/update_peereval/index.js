@@ -8,9 +8,9 @@ import { usePeerEvals } from '../../../hooks';
 
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
-const navigate = useNavigate();
 const validate = (values) => {
   const errors = {};
+  const navigate = useNavigate();
 
   if (!values.name) {
     errors.name = 'This field is required.';
