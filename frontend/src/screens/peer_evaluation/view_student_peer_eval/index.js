@@ -11,11 +11,12 @@ import Table from '../../../components/table';
 import { copyToClipBoard } from '../../../utils/copyToClipBoard';
 import GLOBALS from '../../../app_globals';
 
-
+import { useNavigate } from 'react-router-dom';
 import './index.scss';
 
 function StudentPeerEval() {
   const { classId, classRoom, classMember } = useOutletContext();
+  const navigate = useNavigate();
 
   const { assignedPeerEvals, isProcessing, submit } = useAssignedPeerEval(classId, classMember?.id);
 
@@ -44,7 +45,7 @@ function StudentPeerEval() {
       submit(classPeId);
       setClassPeId(null);
       setPageCounter(0);
-      window.location.reload();
+      navigate('/'); // From: window.location.reload();
     } else {
       setPageCounter(pageCounter + 1);
     }

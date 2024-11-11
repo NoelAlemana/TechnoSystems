@@ -7,7 +7,7 @@ import ControlInput from '../../controlinput';
 import { isObjectEmpty } from '../../../utils/object';
 import { useClasses } from '../../../hooks';
 import './index.scss';
-
+import { useNavigate } from 'react-router-dom';
 const validate = (values) => {
   const errors = {};
 
@@ -42,6 +42,7 @@ const validate = (values) => {
 
 function UpdateClass({ visible, handleModal, classroom }) {
   const { updateClass } = useClasses(classroom?.id);
+  const navigate = useNavigate();
 
   return (
     <Dialog className="create-modal p-5" visible={visible} onHide={handleModal} showHeader={false}>
@@ -66,7 +67,7 @@ function UpdateClass({ visible, handleModal, classroom }) {
                 if (retrievedClass) {
                   handleModal();
                   Swal.fire('Class Updated Successfully.').then(() => {
-                    window.location.reload();
+                    navigate('/'); // From: window.location.reload();
                   });
                 }
               },

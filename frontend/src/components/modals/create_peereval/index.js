@@ -7,7 +7,7 @@ import { isObjectEmpty } from '../../../utils/object';
 import { usePeerEvals } from '../../../hooks';
 
 import './index.scss';
-
+import { useNavigate } from 'react-router-dom';
 const validate = (values) => {
   const errors = {};
 
@@ -34,6 +34,7 @@ const validate = (values) => {
 
 function CreatePeerEval({ visible, handleModal }) {
   const { createPeerEval, isProcessing } = usePeerEvals();
+  const navigate = useNavigate();
 
   return (
     <Dialog className="create-modal p-5" visible={visible} onHide={handleModal} showHeader={false}>
@@ -54,7 +55,7 @@ function CreatePeerEval({ visible, handleModal }) {
 
             const createPeerEvalCallbacks = {
               created: async ({ retrievedPeerEval }) => {
-                window.location.reload();
+                navigate('/'); // From: window.location.reload();
               },
               invalidFields: () =>
                 setErrors({

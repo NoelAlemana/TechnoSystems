@@ -7,6 +7,7 @@ import { useWorks } from '../../../hooks';
 
 export const EditWorkPopup = ({ show, handleClose, editWorkData, onSubmit, id, workId }) => {
   const fetchData = useWorks(id);
+  const navigate = useNavigate();
 
   const [workData, setWorkData] = useState({
     description: '',
@@ -29,7 +30,7 @@ export const EditWorkPopup = ({ show, handleClose, editWorkData, onSubmit, id, w
   const handleDelete = async (e) => {
     const response = await fetchData.deleteWork(editData.id);
 
-    window.location.reload();
+    navigate('/'); // From: window.location.reload();
   };
 
   // Get work
@@ -70,7 +71,7 @@ export const EditWorkPopup = ({ show, handleClose, editWorkData, onSubmit, id, w
       handleClose();
     }
 
-    window.location.reload();
+    navigate('/'); // From: window.location.reload();
   };
 
   const handleRemoveFile = () => {

@@ -10,7 +10,8 @@ import ControlTextArea from '../../controltextarea';
 import { useTeams } from '../../../hooks';
 
 import './index.scss';
-
+import { useNavigate } from 'react-router-dom';
+const navigate = useNavigate();
 const validate = (values) => {
   const errors = {};
 
@@ -53,7 +54,7 @@ function UpdateTeam({ visible, handleModal, teamData }) {
                 updated: async ({ retrievedTeam }) => {
                   if (retrievedTeam) {
                     Swal.fire('Team Updated Successfully.');
-                    window.location.reload();
+                    navigate('/'); // From: window.location.reload();
                   }
                 },
                 invalidFields: () => {

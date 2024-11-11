@@ -16,10 +16,11 @@ import './index.scss';
 import AssignNewLeader from '../../../components/modals/assign_new_leader';
 import UpdateTeam from '../../../components/modals/update_team';
 import { copyToClipBoard } from '../../../utils/copyToClipBoard';
+import { useNavigate } from 'react-router-dom';
 
 function Teams() {
   const { user, classId, classMember, classRoom } = useOutletContext();
-
+  const navigate = useNavigate();
   const {
     teams,
     leaders,
@@ -348,7 +349,7 @@ function Teams() {
                       setCurrentTeamMembers(team.members);
                     } else {
                       leaveTeam(team.id, currentTeamMember.id);
-                      window.location.reload();
+                      navigate('/'); // From: window.location.reload();
                     }
                   }}
                 >
@@ -371,7 +372,7 @@ function Teams() {
                     className="btn btn-sm fw-bold text-danger"
                     onClick={() => {
                       removeTeamMember(team.id, tmId);
-                      window.location.reload();
+                      navigate('/'); // From: window.location.reload();
                     }}
                   >
                     REJECT
@@ -383,7 +384,7 @@ function Teams() {
                   className="btn btn-sm fw-bold text-danger"
                   onClick={() => {
                     removeTeamMember(team.id, tmId);
-                    window.location.reload();
+                    navigate('/'); // From: window.location.reload();
                   }}
                 >
                   KICK
@@ -520,12 +521,12 @@ function Teams() {
 
   const handleAcceptLeader = () => {
     acceptLeader(classMember?.id);
-    window.location.reload();
+    navigate('/'); // From: window.location.reload();
   };
 
   const handleDeclineLeader = () => {
     removeLeader(classMember?.id);
-    window.location.reload();
+    navigate('/'); // From: window.location.reload();
   };
 
   const renderPendingLeader = () => (

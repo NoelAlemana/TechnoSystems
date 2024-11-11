@@ -7,7 +7,8 @@ import { isObjectEmpty } from '../../../utils/object';
 import { usePeerEvals } from '../../../hooks';
 
 import './index.scss';
-
+import { useNavigate } from 'react-router-dom';
+const navigate = useNavigate();
 const validate = (values) => {
   const errors = {};
 
@@ -54,7 +55,7 @@ function UpdatePeerEvalForm({ initValues, visible, handleModal }) {
 
             const updatePeerEvalCallbacks = {
               updated: async ({ retrievedPeerEval }) => {
-                window.location.reload();
+                navigate('/'); // From: window.location.reload();
               },
               invalidFields: () =>
                 setErrors({

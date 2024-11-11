@@ -7,7 +7,7 @@ import { isObjectEmpty } from '../../../utils/object';
 import { copyToClipBoard } from '../../../utils/copyToClipBoard';
 import { useCreateClass } from '../../../hooks';
 import './index.scss';
-
+import { useNavigate } from 'react-router-dom';
 const validate = (values) => {
   const errors = {};
 
@@ -45,6 +45,7 @@ function CreateClass({ visible, handleModal }) {
   const [classCode, setClassCode] = useState('');
 
   const { createClass } = useCreateClass();
+  const navigate = useNavigate();
 
   const openShowCodeModal = () => {
     setShowCode(true);
@@ -52,7 +53,7 @@ function CreateClass({ visible, handleModal }) {
 
   const closeShowCodeModal = () => {
     setShowCode(false);
-    window.location.reload();
+    navigate('/'); // From: window.location.reload();
   };
 
   const handleCopyCode = (code) => {
@@ -64,7 +65,7 @@ function CreateClass({ visible, handleModal }) {
 
     setShowCode(false);
     handleModal();
-    window.location.reload();
+    navigate('/'); // From: window.location.reload();
   };
 
   const renderShowCode = (code) => (

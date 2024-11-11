@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import { PitchesService } from '../../../services';
+import { useNavigate } from 'react-router-dom';
 
 export default function MeetingsPageCreatePitch({
   open,
@@ -26,7 +27,7 @@ export default function MeetingsPageCreatePitch({
     course: localStorage.getItem('course'),
     pitchId: team?.pitch?.id,
   });
-
+  const navigate = useNavigate();
   const handleInputChange = (e) => {
     let { name, value } = e.target;
 
@@ -54,7 +55,7 @@ export default function MeetingsPageCreatePitch({
     }
     updateTeam(formData);
     handleClose();
-    window.location.reload();
+    navigate('/'); // From: window.location.reload();
   };
 
   return (

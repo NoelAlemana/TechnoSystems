@@ -10,7 +10,7 @@ import ControlTextArea from '../../controltextarea';
 import { useTeams } from '../../../hooks';
 
 import './index.scss';
-
+import { useNavigate } from 'react-router-dom';
 const validate = (values) => {
   const errors = {};
 
@@ -30,6 +30,7 @@ const validate = (values) => {
 function CreateTeam({ visible, handleModal }) {
   const { classId } = useOutletContext();
   const { createTeam } = useTeams(classId);
+  const navigate = useNavigate();
 
   return (
     <Dialog className="hiring-post-modal" visible={visible} onHide={handleModal} showHeader={false}>
@@ -53,7 +54,7 @@ function CreateTeam({ visible, handleModal }) {
                 created: async ({ retrievedTeam }) => {
                   if (retrievedTeam) {
                     Swal.fire('Team Created Successfully.').then(() => {
-                      window.location.reload();
+                      navigate('/'); // From: window.location.reload();
                     });
                   }
                 },
