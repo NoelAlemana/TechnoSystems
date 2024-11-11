@@ -155,7 +155,7 @@ function AddBoard() {
             <Loading />
           )}
         <div className={styles.tabContent}>
-        <button
+        {/* <button
   onClick={async () => {
     try {
       console.log("Result:", activityID); // Print the resolved value
@@ -165,7 +165,7 @@ function AddBoard() {
   }}
 >
   Print Boards
-</button>
+</button> */}
               <>
                 <div className={styles.tabHeader}>
                   {/* <p>Result</p> */}

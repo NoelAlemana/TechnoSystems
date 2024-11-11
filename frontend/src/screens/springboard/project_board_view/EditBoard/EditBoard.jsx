@@ -128,14 +128,14 @@ function EditBoard() {
           </span>
           {title}
         </span>
-        <button
+        {/* <button
           onClick={() => {
             console.log('projectboard:', activityID);
           }}
           className={styles.printButton}
         >
           Print 
-        </button>
+        </button> */}
         <Card className={styles.cardContainer}>
           <div className={styles.box} />
           {content ? (
