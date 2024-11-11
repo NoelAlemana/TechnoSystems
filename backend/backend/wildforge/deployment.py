@@ -19,9 +19,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     'https://happy-bay-08cd80100.5.azurestaticapps.net/' 
-# ]
+CORS_ALLOWED_ORIGINS = [
+    'https://gray-flower-045790600.5.azurestaticapps.net/' 
+]
 
 
 STORAGES = {
