@@ -69,7 +69,7 @@ class ChatbotsController(viewsets.GenericViewSet,
 
             messages_to_be_sent = constant_messages + destruct_messages
 
-            client = OpenAI(api_key=os.environ.get('OPENAI_KEY'))
+            client = OpenAI(api_key=os.environ['OPENAI_KEY'])
             openai_response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=messages_to_be_sent,

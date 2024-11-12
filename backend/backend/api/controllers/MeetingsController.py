@@ -372,7 +372,7 @@ class MeetingsController(viewsets.GenericViewSet,
 
             complete_prompt = f'Please provide a concise summary of the remarks. Highlight key strengths and areas for improvement mentioned by each evaluator. Provide it into a single paragraph.{prompt}'
 
-            client = OpenAI(api_key=os.environ.get('OPENAI_KEY'))
+            client = OpenAI(api_key=os.environ['OPENAI_KEY'])
             openai_response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[{
