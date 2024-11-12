@@ -172,8 +172,13 @@ class ActivityController(viewsets.GenericViewSet,
             "Your response should include:\n" +
             "Individual ratings and feedback for each criterion.\n" +
             "Adjustments based on the chosen strictness level.\n\n" +
-            "Criteria with their respective strictness level:\n" 
+            "Criteria with their respective strictness level:\n" +
+            "The Following are the Activity Details." +
+            "\nActivity Title: " + activity_instance.title +
+            "\nActivity Description: " + activity_instance.description +
+            "\nActivity Instructions: " + activity_instance.instruction
         ]
+ 
 
         # Add the formatted criteria and strictness information
         images += [f"- {criteria} : {strictness}\n" for criteria, strictness in criteria_with_strictness]
