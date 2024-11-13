@@ -55,7 +55,7 @@ function CreatePeerEval({ visible, handleModal }) {
 
             const createPeerEvalCallbacks = {
               created: async ({ retrievedPeerEval }) => {
-                navigate(0); // From: window.location.reload();
+                navigate('/'); // From: window.location.reload();
               },
               invalidFields: () =>
                 setErrors({

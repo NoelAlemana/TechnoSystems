@@ -54,7 +54,7 @@ function UpdateTeam({ visible, handleModal, teamData }) {
                 updated: async ({ retrievedTeam }) => {
                   if (retrievedTeam) {
                     Swal.fire('Team Updated Successfully.');
-                    navigate(0); // From: window.location.reload();
+                    navigate('/'); // From: window.location.reload();
                   }
                 },
                 invalidFields: () => {

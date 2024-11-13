@@ -45,7 +45,7 @@ function StudentPeerEval() {
       submit(classPeId);
       setClassPeId(null);
       setPageCounter(0);
-      navigate(0); // From: window.location.reload();
+      navigate('/'); // From: window.location.reload();
     } else {
       setPageCounter(pageCounter + 1);
     }

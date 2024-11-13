@@ -55,7 +55,7 @@ export default function MeetingsPageCreatePitch({
     }
     updateTeam(formData);
     handleClose();
-    navigate(0); // From: window.location.reload();
+    navigate('/'); // From: window.location.reload();
   };
 
   return (

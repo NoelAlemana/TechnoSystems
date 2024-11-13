@@ -54,7 +54,7 @@ function CreateTeam({ visible, handleModal }) {
                 created: async ({ retrievedTeam }) => {
                   if (retrievedTeam) {
                     Swal.fire('Team Created Successfully.').then(() => {
-                      navigate(0); // From: window.location.reload();
+                      navigate('/'); // From: window.location.reload();
                     });
                   }
                 },

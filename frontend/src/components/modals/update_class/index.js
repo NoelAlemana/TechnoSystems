@@ -67,7 +67,7 @@ function UpdateClass({ visible, handleModal, classroom }) {
                 if (retrievedClass) {
                   handleModal();
                   Swal.fire('Class Updated Successfully.').then(() => {
-                    navigate(0); // From: window.location.reload();
+                    navigate('/'); // From: window.location.reload();
                   });
                 }
               },

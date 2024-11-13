@@ -55,7 +55,7 @@ function UpdatePeerEvalForm({ initValues, visible, handleModal }) {
 
             const updatePeerEvalCallbacks = {
               updated: async ({ retrievedPeerEval }) => {
-                navigate(0); // From: window.location.reload();
+                navigate('/'); // From: window.location.reload();
               },
               invalidFields: () =>
                 setErrors({

@@ -30,7 +30,7 @@ export const EditWorkPopup = ({ show, handleClose, editWorkData, onSubmit, id, w
   const handleDelete = async (e) => {
     const response = await fetchData.deleteWork(editData.id);
 
-    navigate(0); // From: window.location.reload();
+    navigate('/'); // From: window.location.reload();
   };
 
   // Get work
@@ -71,7 +71,7 @@ export const EditWorkPopup = ({ show, handleClose, editWorkData, onSubmit, id, w
       handleClose();
     }
 
-    navigate(0); // From: window.location.reload();
+    navigate('/'); // From: window.location.reload();
   };
 
   const handleRemoveFile = () => {
