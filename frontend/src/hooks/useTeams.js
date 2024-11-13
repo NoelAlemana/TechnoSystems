@@ -301,7 +301,7 @@ const useTeams = (classId) => {
     switch (responseCode) {
       case 200:
       case 201:
-        navigate('/'); // From: window.location.reload();
+        navigate(0); // From: window.location.reload();
         break;
       case 404:
         navigate(`/classes/${classId}/teams`);

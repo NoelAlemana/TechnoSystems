@@ -190,7 +190,7 @@ const ViewActivityStudent = () => {
       submission_status: submitted,
     };
     submitAct.submitActivity(classId, teamId, activityId, data);
-    navigate('/'); // From: window.location.reload();
+    navigate(0); // From: window.location.reload();
   };
 
   // Edit/Delete Work

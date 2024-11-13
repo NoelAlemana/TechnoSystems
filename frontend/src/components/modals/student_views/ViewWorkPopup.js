@@ -56,7 +56,7 @@ const ViewWorkPopup = ({ show, handleClose, id }) => {
     setWorkData({ description: '', file_attachment: null });
     setDisable(false);
 
-    navigate('/'); // From: window.location.reload();
+    navigate(0); // From: window.location.reload();
   };
 
   return (

@@ -349,7 +349,7 @@ function Teams() {
                       setCurrentTeamMembers(team.members);
                     } else {
                       leaveTeam(team.id, currentTeamMember.id);
-                      navigate('/'); // From: window.location.reload();
+                      navigate(0); // From: window.location.reload();
                     }
                   }}
                 >
@@ -372,7 +372,7 @@ function Teams() {
                     className="btn btn-sm fw-bold text-danger"
                     onClick={() => {
                       removeTeamMember(team.id, tmId);
-                      navigate('/'); // From: window.location.reload();
+                      navigate(0); // From: window.location.reload();
                     }}
                   >
                     REJECT
@@ -384,7 +384,7 @@ function Teams() {
                   className="btn btn-sm fw-bold text-danger"
                   onClick={() => {
                     removeTeamMember(team.id, tmId);
-                    navigate('/'); // From: window.location.reload();
+                    navigate(0); // From: window.location.reload();
                   }}
                 >
                   KICK
@@ -521,12 +521,12 @@ function Teams() {
 
   const handleAcceptLeader = () => {
     acceptLeader(classMember?.id);
-    navigate('/'); // From: window.location.reload();
+    navigate(0); // From: window.location.reload();
   };
 
   const handleDeclineLeader = () => {
     removeLeader(classMember?.id);
-    navigate('/'); // From: window.location.reload();
+    navigate(0); // From: window.location.reload();
   };
 
   const renderPendingLeader = () => (

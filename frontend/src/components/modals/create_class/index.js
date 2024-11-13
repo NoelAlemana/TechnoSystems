@@ -53,7 +53,7 @@ function CreateClass({ visible, handleModal }) {
 
   const closeShowCodeModal = () => {
     setShowCode(false);
-    navigate('/'); // From: window.location.reload();
+    navigate(0); // From: window.location.reload();
   };
 
   const handleCopyCode = (code) => {
@@ -65,7 +65,7 @@ function CreateClass({ visible, handleModal }) {
 
     setShowCode(false);
     handleModal();
-    navigate('/'); // From: window.location.reload();
+    navigate(0); // From: window.location.reload();
   };
 
   const renderShowCode = (code) => (
