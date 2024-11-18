@@ -157,7 +157,7 @@ WSGI_APPLICATION = 'wildforge.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'techno_db',
+        'NAME': 'wild_forge',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',

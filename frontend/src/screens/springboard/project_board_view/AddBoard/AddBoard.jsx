@@ -214,18 +214,13 @@ function AddBoard() {
             const firstKey = Object.keys(feedbackObject)[0]; // Get the first key from the object
 
             // Check if the description of the first key is "0"
-            if (feedbackObject[firstKey].description === "0") {
+            if (feedbackObject[firstKey].description === "0" || feedbackObject[firstKey].description === "") {
               return null; // If description is "0", don't show the button
             }
 
             return (
-              <Button
-                className={styles.button}
-                onClick={() => {
-                  console.log(feedbackObject); // Log the entire object when the button is clicked
-                }}
-              >
-                Submit
+              <Button className={styles.button} onClick={addProjectBoard}>
+              Submit
               </Button>
             );
           })()}
